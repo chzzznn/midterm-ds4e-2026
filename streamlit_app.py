@@ -25,7 +25,6 @@ NEUTRAL  = "#6c757d"
 st.markdown("""
 <style>
 .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     border-radius: 12px;
     padding: 40px 48px;
     margin-bottom: 28px;
@@ -38,7 +37,6 @@ st.markdown("""
     background: white;
     border-radius: 10px;
     padding: 22px 28px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
     margin-bottom: 16px;
     border-left: 5px solid #1a6fb5;
 }
