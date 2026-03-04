@@ -195,11 +195,10 @@ if page == "🏠 Introduction":
     st.markdown('<div class="sec-title">🔬 Methodology</div>', unsafe_allow_html=True)
     st.markdown("""
     1. **Data Cleaning** — drop nulls, normalise column names, engineer the target variable
-    2. **EDA** — visualise distributions, correlations, and geographic patterns
-    3. **Feature Selection** — choose socioeconomic predictors; drop collinear variables
-    4. **Model Training** — Ordinary Least Squares Linear Regression (Scikit-Learn)
-    5. **Evaluation** — R², MAE, residual analysis
-    6. **Application** — interactive county-level predictor on the model page
+    2. **Feature Selection** — choose socioeconomic predictors
+    3. **Model Training** — Ordinary Least Squares Linear Regression (Scikit-Learn)
+    4. **Evaluation** — R², MAE, residual analysis
+    5. **Application** — interactive county-level predictor on the model page
     """)
 
 
