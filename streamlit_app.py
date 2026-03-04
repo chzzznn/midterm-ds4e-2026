@@ -133,7 +133,7 @@ st.sidebar.markdown("*Aimee P, Nicole Z, Olivia P*")
 if page == "🏠 Introduction":
 
     st.markdown("""
-    🗳️ ElectionIQ
+    <h1>🗳️ ElectionIQ</h1>
        Can socioeconomic demographics predict how a county votes?
         A data-driven approach to understanding American elections.
     """, unsafe_allow_html=True)
@@ -210,7 +210,7 @@ if page == "🏠 Introduction":
 elif page == "📊 Data Visualization":
 
     st.markdown("""
-   ###📊 Data Visualization
+   <h1>📊 Data Visualization</h1>
        Exploring the socioeconomic patterns behind the American vote.
     """, unsafe_allow_html=True)
 
@@ -397,7 +397,7 @@ elif page == "📊 Data Visualization":
 elif page == "🤖 Prediction Model":
 
     st.markdown("""
-    ###🤖 Prediction Model
+    <h1>🤖 Prediction Model</h1>
         Linear regression to predict Republican vote share from county demographics.
     """, unsafe_allow_html=True)
 
