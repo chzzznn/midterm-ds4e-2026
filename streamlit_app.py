@@ -158,12 +158,11 @@ if page == "🏠 Introduction":
 
     with col2:
         st.markdown("""
-       🎯 Target Variable</div>
-        Republican presidential vote share (%) at county level</div>
-        📥 Key Predictors</div>
-        Income, Poverty rate, Race demographics, Employment sector, Unemployment</div>
-        💡 Value Delivered</div>
-        Identify "persuadable" counties where demographics suggest a different outcome is possible
+       🎯 Target Variable: Republican presidential vote share (%) at county level
+
+        📥 Key Predictors: Income, Poverty rate, Race demographics, Employment sector, Unemployment
+
+        💡 Value Delivered: Identify "persuadable" counties where demographics suggest a different outcome is possible
         """, unsafe_allow_html=True)
 
 
