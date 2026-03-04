@@ -193,23 +193,19 @@ if page == "🏠 Business Case & Data":
         st.markdown("Combines voting results (2016 & 2020) with US Census demographics.")
         col_a, col_b, col_c = st.columns(3)
         col_a.metric("Counties", f"{len(county_df):,}")
-        col_b.metric("States", county_df['state'].nunique())
-        col_c.metric("Features", len(county_df.columns))
         st.dataframe(county_df.head(8), use_container_width=True)
 
     with tab2:
         st.markdown(f"**{len(polls_biden):,} poll entries — 2020 presidential race**")
         col_a, col_b = st.columns(2)
         col_a.metric("Unique Polls", polls_biden['poll_id'].nunique())
-        col_b.metric("States Covered", polls_biden['state'].nunique())
+
         st.dataframe(polls_biden.head(8), use_container_width=True)
 
     with tab3:
         st.markdown(f"**{len(polls_clinton):,} poll entries — 2016 presidential race**")
         col_a, col_b = st.columns(2)
         has_poll_id = 'poll_id' in polls_clinton.columns
-        col_a.metric("Unique Polls", polls_clinton['poll_id'].nunique() if has_poll_id else "N/A")
-        col_b.metric("States Covered", polls_clinton['state'].nunique())
         st.dataframe(polls_clinton.head(8), use_container_width=True)
 
     st.markdown("---")
