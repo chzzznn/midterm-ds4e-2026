@@ -210,7 +210,7 @@ if page == "🏠 Introduction":
 elif page == "📊 Data Visualization":
 
     st.markdown("""
-   📊 Data Visualization
+   ###📊 Data Visualization
        Exploring the socioeconomic patterns behind the American vote.
     """, unsafe_allow_html=True)
 
@@ -397,7 +397,7 @@ elif page == "📊 Data Visualization":
 elif page == "🤖 Prediction Model":
 
     st.markdown("""
-    🤖 Prediction Model
+    ###🤖 Prediction Model
         Linear regression to predict Republican vote share from county demographics.
     """, unsafe_allow_html=True)
 
@@ -429,8 +429,8 @@ elif page == "🤖 Prediction Model":
     # metrics
     st.markdown('<div class="sec-title">📈 Model Performance</div>', unsafe_allow_html=True)
     c1, c2, c3 = st.columns(3)
-    c1.metric("R² Score", f"{r2:.3f}", help="Proportion of variance explained by the model")
-    c2.metric("Mean Abs. Error", f"{mae:.1%}", help="Average prediction error in percentage points")
+    c1.metric("R² Score", f"{r2:.3f}")
+    c2.metric("Mean Abs. Error", f"{mae:.1%}")
     c3.metric("Training Samples", f"{len(X_train):,}")
 
     col1, col2 = st.columns(2)
