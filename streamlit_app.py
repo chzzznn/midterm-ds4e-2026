@@ -60,22 +60,20 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-## Welcome to ElectionIQ
+## ElectionIQ
 
 Every four years, billions of dollars are spent trying to answer one question:
 **who is going to win?** Campaigns pour resources into swing states, pollsters
-survey thousands of voters, and analysts build ever-more-complex models — yet
-elections still surprise us.
+survey thousands of voters, and analysts build ever-more-complex models but
+Election results still surprise us.
 
-ElectionIQ takes a different approach. Instead of asking *who people say they'll
-vote for*, we ask: **can the demographics of a county alone tell us how it will vote?**
+Instead of asking *who people say they'll vote for*, we ask: **can the demographics of a county alone tell us how it will vote?**
 
-Using US Census data alongside county-level results from the 2016 and 2020
+Using US Census data and county-level results from the 2016 and 2020
 presidential elections, we built a linear regression model that predicts the
-Republican vote share of any US county based on socioeconomic indicators —
+Republican vote share of any US county based on socioeconomic indicators,
 income, poverty rate, racial composition, employment sector, and more.
 
----
 
 ### 📦 The Data
 
@@ -91,17 +89,16 @@ Our analysis draws on three datasets:
 All datasets are publicly available — county voting data from the MIT Election Lab,
 demographic data from the US Census Bureau, and polling data from FiveThirtyEight.
 
----
 
 ### 🔬 Our Approach
 
 We treat this as a **supervised regression problem**. The target variable is the
-Republican presidential vote share at county level. Our features are purely
-socioeconomic — no prior vote history, no polling data — to test how much
+Republican presidential vote share at county level. Our features are
+socioeconomic with no prior vote history and no polling data to test how much
 demographics alone can explain electoral outcomes.
 
 We use **Ordinary Least Squares Linear Regression** for its interpretability:
-every coefficient has a clear meaning, making it easy to explain *why* the model
+every coefficient has a clear meaning, making it easier to explain *why* the model
 predicts what it does. This matters in a political context where understanding
 the drivers is just as valuable as the prediction itself.
 """)
@@ -122,28 +119,23 @@ except Exception as e:
 
 #  Sidebar 
 st.sidebar.markdown("## 🗳️ ElectionIQ")
-st.sidebar.markdown("---")
+
 page = st.sidebar.radio(
     "Navigate",
-    ["🏠 Business Case & Data", "📊 Data Visualization", "🤖 Prediction Model"]
+    ["🏠 Introduction", "📊 Data Visualization", "🤖 Prediction Model"]
 )
-st.sidebar.markdown("---")
 st.sidebar.markdown("**Datasets**")
 st.sidebar.markdown("• County Statistics (4,800+ counties)\n• Trump–Biden 2020 Polls\n• Trump–Clinton 2016 Polls")
-st.sidebar.markdown("---")
-st.sidebar.markdown("*NYU · Group Project · 2026*")
-st.sidebar.markdown("*NYU · Group Project · Aimee P, Nicole Z, Olivia P*")
+st.sidebar.markdown("*Aimee P, Nicole Z, Olivia P*")
 
 
 
-if page == "🏠 Business Case & Data":
+if page == "🏠 Introduction":
 
     st.markdown("""
-    <div class="hero">
-        <h1>🗳️ ElectionIQ</h1>
-        <p>Can socioeconomic demographics predict how a county votes?<br>
-        A data-driven approach to understanding American elections.</p>
-    </div>
+    🗳️ ElectionIQ
+       Can socioeconomic demographics predict how a county votes?
+        A data-driven approach to understanding American elections.
     """, unsafe_allow_html=True)
 
     # Problem statement
@@ -166,21 +158,15 @@ if page == "🏠 Business Case & Data":
 
     with col2:
         st.markdown("""
-        <div class="card">
-            <b>🎯 Target Variable</b><br>
-            Republican presidential vote share (%) at county level
-        </div>
-        <div class="card red">
-            <b>📥 Key Predictors</b><br>
-            Income, Poverty rate, Race demographics, Employment sector, Unemployment
-        </div>
-        <div class="card gray">
-            <b>💡 Value Delivered</b><br>
-            Identify "persuadable" counties where demographics suggest a different outcome is possible
-        </div>
+       🎯 Target Variable
+        Republican presidential vote share (%) at county level
+        📥 Key Predictors
+        Income, Poverty rate, Race demographics, Employment sector, Unemployment
+        💡 Value Delivered
+        Identify "persuadable" counties where demographics suggest a different outcome is possible
         """, unsafe_allow_html=True)
 
-    st.markdown("---")
+
 
     # Dataset overview
     st.markdown('<div class="sec-title">📂 Dataset Overview</div>', unsafe_allow_html=True)
@@ -208,7 +194,6 @@ if page == "🏠 Business Case & Data":
         has_poll_id = 'poll_id' in polls_clinton.columns
         st.dataframe(polls_clinton.head(8), use_container_width=True)
 
-    st.markdown("---")
 
     # Methodology
     st.markdown('<div class="sec-title">🔬 Methodology</div>', unsafe_allow_html=True)
@@ -503,7 +488,6 @@ elif page == "🤖 Prediction Model":
     - 🔵 **Negative** (more Democratic): higher Black share, Income, Professional workers, Hispanic share
     """)
 
-    st.markdown("---")
 
     #  Interactive predictor 
     st.markdown('<div class="sec-title">🎮 Interactive County Predictor</div>',
@@ -531,7 +515,6 @@ elif page == "🤖 Prediction Model":
                            construction, production, commute]])
     pred = float(np.clip(model.predict(scaler.transform(input_arr))[0], 0, 1))
 
-    st.markdown("---")
     col_pred, col_viz = st.columns([1, 2])
 
     with col_pred:
