@@ -139,7 +139,7 @@ if page == "🏠 Introduction":
     """, unsafe_allow_html=True)
 
     # Problem statement
-    st.markdown('<div class="sec-title">📌 The Business Problem</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sec-title">📌 The Problem</div>', unsafe_allow_html=True)
     col1, col2 = st.columns([3, 2])
 
     with col1:
@@ -158,11 +158,11 @@ if page == "🏠 Introduction":
 
     with col2:
         st.markdown("""
-       🎯 Target Variablen\
-        Republican presidential vote share (%) at county leveln\
-        📥 Key Predictorsn\
-        Income, Poverty rate, Race demographics, Employment sector, Unemploymentn\
-        💡 Value Deliveredn\
+       🎯 Target Variable</div>
+        Republican presidential vote share (%) at county level</div>
+        📥 Key Predictors</div>
+        Income, Poverty rate, Race demographics, Employment sector, Unemployment</div>
+        💡 Value Delivered</div>
         Identify "persuadable" counties where demographics suggest a different outcome is possible
         """, unsafe_allow_html=True)
 
