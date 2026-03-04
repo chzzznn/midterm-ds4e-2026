@@ -210,10 +210,8 @@ if page == "🏠 Introduction":
 elif page == "📊 Data Visualization":
 
     st.markdown("""
-    <div class="hero">
-        <h1>📊 Data Visualization</h1>
-        <p>Exploring the socioeconomic patterns behind the American vote.</p>
-    </div>
+   📊 Data Visualization
+       Exploring the socioeconomic patterns behind the American vote.
     """, unsafe_allow_html=True)
 
     df = county_df.copy().dropna(subset=[
@@ -399,10 +397,8 @@ elif page == "📊 Data Visualization":
 elif page == "🤖 Prediction Model":
 
     st.markdown("""
-    <div class="hero">
-        <h1>🤖 Prediction Model</h1>
-        <p>Linear regression to predict Republican vote share from county demographics.</p>
-    </div>
+    🤖 Prediction Model
+        Linear regression to predict Republican vote share from county demographics.
     """, unsafe_allow_html=True)
 
     # prepare & train 
